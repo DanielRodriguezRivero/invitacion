@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invitación de boda</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+		  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Ysabeau">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		
+		}
+
+		#video-container {
+        display: none; /* Ocultamos el contenedor de vídeo al principio */
+      }
+
+
+		section{
+			margin-bottom: 40px;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #ffffff;
+		}
+
+		header {
+			display:block ; /* estaba en flex */
+			justify-content: center;
+			align-items: center;
+			height: auto;
+			background-image: url('http');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-bottom: 50px;
+			margin-top: 10px;
+			font-family: Tangerine, serif;
+		}
+
+		#reloj {
+			display: grid;
+			margin-top: 10px;
+		}
+		#despedida{
+			display:flex;
+			height: auto;
+			align-items: center;
+		}
+
+		h1 {
+			font-size: 60px;
+			font-weight: bold;
+			margin-bottom: 30px;
+			font-family: Tangerine, serif;
+			text-shadow: 4px 4px 4px #aaa;
+		}
+
+		#countdown {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 50px;
+		}
+
+		#countdown div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			margin-right: 10px;
+			box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+			min-width: 70px;
+			min-height: 70px;
+		}
+
+		#countdown div span {
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		#countdown div p {
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 60px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			font-family: Tangerine, serif;
+			text-shadow: 4px 4px 4px #aaa;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+		}
+
+        .img2 {
+ max-width: 30%;
+ max-height: 30%;
+ display:block; 
+ margin-left: auto; 
+ margin-right: auto;
+}
+
+.centrado{ display:block; margin-left: auto; margin-right: auto; }
+
+		button {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin-left: 10px;
+			transition: background-color 0.3s;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		#message {
+			font-size: 16px;
+			font-weight: bold;
+			margin-top: 10px;
+			display: none;
+		}
+
+		.textodecorado{
+			font-family: Ysabeau, serif;
+			font-size: 18px;
+		}
+
+		iframe {
+			width: 100%;
+			height: 400px;
+			border: none;
+			margin-bottom: 20px;
+		}
+
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-top: 50px;
+		}
+        .cabecera{
+            text-align: center;
+        }
+
+
+		label {
+        display: block;
+        margin-top: 10px;
+      }
+      iframe {
+        display: none;
+      }
+
+
+	</style>
+	<script>
+       document.addEventListener('DOMContentLoaded', () => { 
+
+//===
+// VARIABLES
+//===
+const DATE_TARGET = new Date('09/03/2023 12:01 PM');
+// DOM for render
+const SPAN_DAYS = document.querySelector('span#days');
+const SPAN_HOURS = document.querySelector('span#hours');
+const SPAN_MINUTES = document.querySelector('span#minutes');
+const SPAN_SECONDS = document.querySelector('span#seconds');
+// Milliseconds for the calculations
+const MILLISECONDS_OF_A_SECOND = 1000;
+const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+//===
+// FUNCTIONS
+//===
+
+/**
+* Method that updates the countdown and the sample
+*/
+function updateCountdown() {
+    // Calcs
+    const NOW = new Date()
+    const DURATION = DATE_TARGET - NOW;
+    const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+    const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+    const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+    const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+    // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+
+    // Render
+    SPAN_DAYS.textContent = REMAINING_DAYS;
+    SPAN_HOURS.textContent = REMAINING_HOURS;
+    SPAN_MINUTES.textContent = REMAINING_MINUTES;
+    SPAN_SECONDS.textContent = REMAINING_SECONDS;
+}
+
+//===
+// INIT
+//===
+updateCountdown();
+// Refresh every second
+setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+});
+
+
+
+const form = document.querySelector('form');
+const video = document.querySelector('#video');
+
+form.addEventListener('change', function(event) {
+  const selectedSong = event.target.value;
+  video.src = selectedSong;
+  video.style.display = 'block';
+});
+    </script>
+
+
+
+</head>
+<body>
+
+	<header>
+		<center><img src="logo.png" alt="Foto de Laura, Dani y el Castillo de Torrelobaton"></center>
+	</header>
+
+	<main>
+		<section id="reloj">
+			<h1 class="cabecera" >Tic Tac</h1>
+			<div id="countdown">
+				<div>
+					<span id="days"></span>
+					<p>Días</p>
+				</div>
+				<div>
+					<span id="hours"></span>
+					<p>Horas</p>
+				</div>
+				<div>
+					<span id="minutes"></span>
+					<p>Minutos</p>
+				</div>
+                <div>
+					<span id="seconds"></span>
+					<p>Segundos</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2 class="cabecera">Regalos</h2>
+			<img class="img2" src="regalo.gif" alt="Icono de regalo">
+           <center><p class="textodecorado">Si deseáis regalarnos algo más que vuestra hermosa presencia...</p></center> <br/>
+			<button class="centrado" type="button" onClick='document.getElementById("text").style.display="initial"'>IBAN cuenta del banco</button><br/>
+			<center><p class="textodecorado" id="text" style="display:none;">Vuestra presencia es el mejor regalo. Además, en metálico no hay que declararlo.</p></center>
+
+		</section>
+<br/>
+		<section>
+			<h2 class="cabecera">¿Y a esto cómo se llega?</h2>
+
+			<a href="https://goo.gl/maps/iMaUnzY6d96i8JcK8" target="_self">
+				<img onClick='document.getElementById("text").style.display="mapilla"' class="img2" src="mapas.gif" alt="Icono de mapa">
+			</a>
+            <iframe id="mapilla" style="display: none;"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1771455758385!2d-3.9554270986631455!3d43.31586320911682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd493bb748468273%3A0x7c21c879f46bb6ae!2sFinca%20de%20San%20Juan%20Hoster%C3%ADa%20%26%20Catering!5e0!3m2!1ses!2ses!4v1682522102168!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</section>
+
+		<section>
+			<h2 class="cabecera">Elige la canción de la boda</h2>
+
+			<form>
+      <label>
+        <input type="radio" name="song" value="https://www.youtube.com/embed/vYzU1Fu6Mew">
+        Never gonna give you up - Rick Astley
+      </label>
+      <label>
+        <input type="radio" name="song" value="https://www.youtube.com/embed/kJQP7kiw5Fk">
+        Shape of you - Ed Sheeran
+      </label>
+      <label>
+        <input type="radio" name="song" value="https://www.youtube.com/embed/uSD4vsh1zDA">
+        The Middle - Zedd, Maren Morris, Grey
+      </label>
+    </form>
+
+	<div id="video-container">
+		<iframe id="video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+	  </div>
+			
+		</section>
+
+		<section>
+			<h2  class="cabecera">Nos vemos pronto</h2>
+			<center><img id="despedida" src="despedida.jpg" alt="Dibujo"></center>
+		</section>
+	</main>
+
+	<footer>
+		<p>Todos los derechos reservados@2023 D2R. Se hacen invitaciones y se configura el Amazon Fire Stick para ver el Madrid gratis.</p>
+	</footer>
+
+</body>
+</html>
