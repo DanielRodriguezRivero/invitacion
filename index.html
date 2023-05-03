@@ -28,7 +28,9 @@
 
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #ffffff;
+			/*background-color: #ffffff; */
+			background: rgb(34,193,195);
+  background: linear-gradient(135deg, rgb(249, 250, 250) 23%, #84e7f8 100%); 
 		}
 
 		header {
@@ -107,6 +109,7 @@
 			max-width: 100%;
 			height: auto;
 			margin-bottom: 20px;
+			border-radius: 5px;
 		}
 
         .img2 {
@@ -115,6 +118,7 @@
  display:block; 
  margin-left: auto; 
  margin-right: auto;
+ border-radius: 5px;
 }
 
 .centrado{ display:block; margin-left: auto; margin-right: auto; }
@@ -174,6 +178,32 @@
         display: none;
       }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery a {
+  flex: 1;
+  margin: 5px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .gallery {
+    display: block;
+  }
+  
+  .gallery a {
+    margin: 10px 0;
+  }
+}
 
 	</style>
 	<script>
@@ -311,6 +341,23 @@ form.addEventListener('change', function(event) {
 	  </div>
 			
 		</section>
+
+		<section>
+			<h2 class="cabecera">Actividades Pre-boda</h2>
+			<p class="textodecorado">Mientras el esperado momento llega, os invitamos a disfrutar de las distintas actividades que hemos preparado para vosotros.</p>
+			<br/>
+			<div class="gallery">
+  <a href="enlace-imagen-1"><img src="parentesco.png"></a>
+  <a href="enlace-imagen-2"><img src="imagen-2.jpg"></a>
+  <a href="https://youtube.com/playlist?list=PLpvUWK9JpaDeL8-EaDRt7vWBsrfvIvTOT"><img src="playlist.png"></a>
+  <a href="prosi.html"><img src="prosinecki.png"></a>
+</div>
+
+		</section>
+
+
+
+
 
 		<section>
 			<h2  class="cabecera">Nos vemos pronto</h2>
