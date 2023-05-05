@@ -17,13 +17,9 @@
 		
 		}
 
-		#video-container {
-        display: none; /* Ocultamos el contenedor de vídeo al principio */
-      }
-
 
 		section{
-			margin-bottom: 40px;
+			margin-bottom: 15px;
 		}
 
 		body {
@@ -42,8 +38,9 @@
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			margin-bottom: 50px;
-			margin-top: 10px;
+			margin-bottom: 0px;
+			margin-top: 2px;
+			padding-bottom: 0px;
 			font-family: Tangerine, serif;
 		}
 
@@ -108,8 +105,8 @@
 		img {
 			max-width: 100%;
 			height: auto;
-			margin-bottom: 20px;
-			border-radius: 5px;
+			margin-bottom: 20px; 
+			border-radius: 10px;
 		}
 
         .img2 {
@@ -120,6 +117,9 @@
  margin-right: auto;
  border-radius: 5px;
 }
+
+.efectochachi:hover {-webkit-transform:scale(1.1);transform:scale(1.1);}
+.efectochachi  {overflow:hidden;}
 
 .centrado{ display:block; margin-left: auto; margin-right: auto; }
 
@@ -138,6 +138,41 @@
 		button:hover {
 			background-color: #3e8e41;
 		}
+
+
+		.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.izquierda,
+.derecha {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.izquierda p,
+.derecha .texto p {
+  margin-left: 20px;
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.derecha {
+  flex-direction: row-reverse;
+}
+
+.derecha .texto {
+  margin-right: 20px;
+  text-align: right;
+}
+
 
 		#message {
 			font-size: 16px;
@@ -163,7 +198,8 @@
 			color: #fff;
 			padding: 20px;
 			text-align: center;
-			margin-top: 50px;
+			margin-top: 0px;
+
 		}
         .cabecera{
             text-align: center;
@@ -195,6 +231,29 @@
   object-fit: cover;
 }
 
+.seccion{
+	padding: 50px;
+}
+.seccion h2 {
+  margin-top: 0;
+}
+
+.seccion .contenido {
+  display: block;
+  flex-wrap:nowrap ;
+  justify-content: space-between;
+}
+
+.seccion .contenido p {
+  flex-basis: 45%;
+}
+
+.seccion .contenido img {
+  max-width: 45%;
+  margin-bottom: 20px;
+}
+
+
 @media screen and (max-width: 767px) {
   .gallery {
     display: block;
@@ -203,6 +262,11 @@
   .gallery a {
     margin: 10px 0;
   }
+}
+
+main{
+	margin-top: 0px;
+	padding-top: 0px;
 }
 
 	</style>
@@ -278,6 +342,24 @@ form.addEventListener('change', function(event) {
 	</header>
 
 	<main>
+
+		<section class="seccion">
+			<h2 class="cabecera">Llegó el momento</h2>
+			<div class="contenido">
+			  <p class="textodecorado" align = "justify">¡Enhorabuena! Si estás leyendo estas líneas es porque has sido invitado al enlace nupcial que tendrá lugar el próximo día tres de septiembre de 2023 a una hora que a la confección de esta invitación todavía no ha sido fijada pero que de seguro tendrá lugar antes de comer y después del desayuno post-resaca de la noche anterior.</p>
+			  <br>
+			  <p class="textodecorado" align = "justify">El diccionario Webster define el "matrimonio" con unas bonitas y cultas palabras, de seguro, pero solo tengo a mano un Espasa de la época de la E.G.B. pero ya me lo han pedido para hacer de telonero en un concierto revival, así que tendré que usar mis propias palabras.</p>
+			  <br>
+			  <p class="textodecorado" align = "justify">Dejando de lado a Dios, que está enterado del asunto desde que hicimos de Torrelobatón nuestro hogar común en aquel, ya lejano, abril de 2018, el matrimonio no es más que un acto burocrático donde se da parte al estado del inicio de una asociación de carácter sentimental, aunque a veces el amor está de más, que se lo digan a Juan Carlos, y que los miembros de la misma se comprometen a mantenerla por un tiempo indefinido, lo que antiguamente equivalía a trabajar de funcionario pero que hoy día equivale a un contrato de repartidor en Glovo.</p>
+			  <br>
+			  <p class="textodecorado" align = "justify">Por ser tan peregrino el acto, pese al simbolismo, pensamos que sería una buena oportunidad de que nuestras familias se conocieran y poder invitaros a todos a comer, por una vez.</p>
+			  <br>
+			  <p class="textodecorado" align = "justify">	Apuesto a que nunca habíais tenido que leer tanto en una invitación pero también apuesto a que nunca habíais tenido que colaros en otra boda para que os dieran de beber. Os podéis llevar la petaca o una nevera de playa con cervezas, lo que mejor os venga.	Más abajo encontraréis más información al respecto. Apuntad la fecha en el calendario que el tiempo vuela... (debajo lo de tic tac)</p>
+			</div>
+		</section>
+		  
+
+
 		<section id="reloj">
 			<h1 class="cabecera" >Tic Tac</h1>
 			<div id="countdown">
@@ -300,6 +382,20 @@ form.addEventListener('change', function(event) {
 			</div>
 		</section>
 
+		<div class="contenedor">
+			<h1 class="cabecera" >Los novios</h1>
+			<div class="izquierda">
+			  <img src="ruta-de-la-imagen-1.jpg" alt="Imagen 1" class="circulo">
+			  <p>Párrafo al lado de la imagen 1</p>
+			</div>
+			<div class="derecha">
+			  <img src="ruta-de-la-imagen-2.jpg" alt="Imagen 2" class="circulo">
+			  <div class="texto">
+				<p>Texto a la izquierda de la imagen 2</p>
+			  </div>
+			</div>
+		  </div>
+
 		<section>
 			<h2 class="cabecera">Regalos</h2>
 			<img class="img2" src="regalo.gif" alt="Icono de regalo">
@@ -318,53 +414,26 @@ form.addEventListener('change', function(event) {
             <iframe id="mapilla" style="display: none;"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1771455758385!2d-3.9554270986631455!3d43.31586320911682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd493bb748468273%3A0x7c21c879f46bb6ae!2sFinca%20de%20San%20Juan%20Hoster%C3%ADa%20%26%20Catering!5e0!3m2!1ses!2ses!4v1682522102168!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</section>
 
-		<section>
-			<h2 class="cabecera">Elige la canción de la boda</h2>
-
-			<form>
-      <label>
-        <input type="radio" name="song" value="https://www.youtube.com/embed/vYzU1Fu6Mew">
-        Never gonna give you up - Rick Astley
-      </label>
-      <label>
-        <input type="radio" name="song" value="https://www.youtube.com/embed/kJQP7kiw5Fk">
-        Shape of you - Ed Sheeran
-      </label>
-      <label>
-        <input type="radio" name="song" value="https://www.youtube.com/embed/uSD4vsh1zDA">
-        The Middle - Zedd, Maren Morris, Grey
-      </label>
-    </form>
-
-	<div id="video-container">
-		<iframe id="video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-	  </div>
-			
-		</section>
 
 		<section>
 			<h2 class="cabecera">Actividades Pre-boda</h2>
 			<p class="textodecorado">Mientras el esperado momento llega, os invitamos a disfrutar de las distintas actividades que hemos preparado para vosotros.</p>
 			<br/>
 			<div class="gallery">
-  <a href="enlace-imagen-1"><img src="parentesco.png"></a>
-  <a href="enlace-imagen-2"><img src="imagen-2.jpg"></a>
-  <a href="https://youtube.com/playlist?list=PLpvUWK9JpaDeL8-EaDRt7vWBsrfvIvTOT"><img src="playlist.png"></a>
-  <a href="prosi.html"><img src="prosinecki.png"></a>
+  <a href="enlace-imagen-1"><img src="parentesco.png" class="efectochachi"></a>
+  <a href="enlace-imagen-2"><img src="sitios.png" class="efectochachi"></a>
+  <a href="https://youtube.com/playlist?list=PLpvUWK9JpaDeL8-EaDRt7vWBsrfvIvTOT"><img src="playlist.png" class="efectochachi"></a>
+  <a href="prosi.html"><img src="prosinecki.png" class="efectochachi"></a>
 </div>
 
 		</section>
 
-
-
-		<a href="crucigramadani.html">Esto es una pruea de crucigrama</a>
 
 		<section>
 			<h2  class="cabecera">Nos vemos pronto</h2>
 			<center><img id="despedida" src="despedida.jpg" alt="Dibujo"></center>
 		</section>
 	</main>
-
 	<footer>
 		<p>Todos los derechos reservados@2023 D2R. Se hacen invitaciones y se configura el Amazon Fire Stick para ver el Madrid gratis.</p>
 	</footer>
