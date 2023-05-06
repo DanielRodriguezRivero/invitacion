@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>¿De qué parte vienes?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: rgb(34,193,195);
+  background: linear-gradient(135deg, rgb(249, 250, 250) 23%, #84e7f8 100%);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 20px;
+      }
+
+
+
+      h1 {
+			font-size: 60px;
+			font-weight: bold;
+			margin-bottom: 30px;
+			font-family: Tangerine, serif;
+			text-shadow: 4px 4px 4px #aaa;
+            text-align: center;
+		}
+
+      .images {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+
+      .image-wrapper {
+        position: relative;
+        text-align: center;
+        width: 45%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .image-wrapper:hover .text-overlay {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 768px) {
+        .images {
+          flex-direction: column;
+        }
+  
+        .image-wrapper {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="cabecera">¿De qué parte vienes?</h1>
+      <div class="images">
+        <a href="crucigramalaura.html">
+        <div class="image-wrapper">
+          <img src="dani.png" alt="Del novio">
+          <div class="text-overlay">Del novio</div></a>
+        </div>
+        <a href="crucigramadani.html"> <div class="image-wrapper">
+          <a href="crucigramadani.html"><img src="lau.png" alt="De la novia">
+          <div class="text-overlay">De la novia</div>
+        </div></a>
+      </div>
+    </div>
+  </body>
+</html>
+
