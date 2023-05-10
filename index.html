@@ -187,6 +187,25 @@
   text-align: right;
 }
 
+.kodfun{
+	display: flex;
+	height: 20rem;
+	gap: 1rem;
+}
+
+.kodfun > div {
+	flex: 1;
+	border-radius: 1rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	transition: all 8s cubic-bezier(.25,.4,.45,1.4);
+
+}
+
+.kodfun > div:hover{
+	flex: 5;
+}
 
 		#message {
 			font-size: 16px;
@@ -366,7 +385,7 @@ form.addEventListener('change', function(event) {
 			  <br>
 			  <p class="textodecorado" align = "justify">Dejando de lado a Dios, que está enterado del asunto desde que hicimos de Torrelobatón nuestro hogar común en aquel, ya lejano, abril de 2018, y contando con su aprobación, como demuestra el hecho de que no me hayan echado del pueblo, el matrimonio no es más que un acto burocrático donde se da parte al estado del inicio de una asociación de carácter sentimental, aunque a veces el amor está de más, que se lo digan a Juan Carlos, que los miembros de la misma se comprometen a mantener por un tiempo indefinido, lo que antiguamente era tanto como obtener una plaza de funcionario pero que hoy día puede equivaler a que te contraten en Glovo.</p>
 			  <br>
-			  <p class="textodecorado" align = "justify">Por ser tan peregrino el acto por su simbolismo, pensamos que sería una buena oportunidad de que nuestras familias se conocieran y poder invitaros a todos a comer, por una vez.</p>
+			  <p class="textodecorado" align = "justify">Por ser tan peregrino el acto por su simbolismo, pensamos que sería una buena idea aprovechar la oportunidad para que nuestras familias se conocieran y poder invitaros a todos a comer, por una vez.</p>
 			  <br>
 			  <p class="textodecorado" align = "justify">Apuesto a que nunca habíais tenido que leer tanto en una invitación pero también apuesto a que nunca habíais tenido que colaros en otra boda para que os dieran de beber. Os podéis llevar la petaca o una nevera de playa con cervezas, lo que mejor os venga. Más abajo encontraréis más información al respecto. Apuntad la fecha en el calendario que el tiempo vuela...</p>
 			</div>
@@ -400,14 +419,13 @@ form.addEventListener('change', function(event) {
 			<h1 class="cabecera" >Los novios</h1>
 			<div class="izquierda">
 			  <img src="dani.png" alt="Imagen 1" class="circulo">
-			  <p>ZaPo, la primera opción sólo funcionaría en IE.
-
-				Para mí la solución más acertada es la de JavierB, por lo uqe voy a trasladar la pregunta a CSS, ya que aunque se puede hacer con HTML, es una solución muy limitada (o sólo con IE o poniendo una imagen con demasiado peso para lo qeu se busca...</p>
+			  <p class="textodecorado" style="text-align: justify;">Aquí donde lo ven, una vez se comió una mosca, pero no rollo Apocalypse Now, fue en acto de servicio mientras intentaba acabar con una horda de insectos que asediaba el plato de chorizo que resistía en solitario en la mesa de la cocina. Armado con los restos de un matamoscas que había protagonizado anteriores gestas, se lanzó al encuentro de un grupo de dipteros que vieron su oportunidad de abandonar el hostil exterior en cuanto se abrió la puerta. Acabó facilmente con la mayoría, hasta que solo quedó uno. Se inició entonces un combate singular entre hombre e insecto que pareció durar eones. Los mandobles rasgaban el aire mientras la mosca molestaba con su zumbido. El defensor abrió la boca para lanzar un grito de furia, momento en que la mosca se coló en ella en un ataque suicida con el que pensaba atragantar a su víctima. No lo consiguió. Peores cosas se había metido en la boca. Pese a ello, le costó tragarla. No estuvo mal. Sabía a pollo. </p>
 			</div>
+			<br>
 			<div class="derecha">
 			  <img src="lau.png" alt="Imagen 2" class="circulo">
 			  <div class="texto">
-				<p>Texto a la izquierda de la imagen 2</p>
+				<p class="textodecorado" style="text-align: justify;">Conoceréis a esta chica como Laura, delineante, teleoperadora, hermana, hija, tía... todo corazón, un ejemplo para la comunidad. Pero todo cambia cuando sale a caminar por los alrededores de Torrelobatón en primavera. Los testigos, a prudente distancia, afirman que la han avistado en multitud de ocasiones cerca de la subida de las minas en compañía de un animal feroz, cruce entre oso pardo y abejaruco. En la mano, siempre un ramillete, ora un puñado de amapolas rojas como el amanecer que se refleja en sus ojos cada mañana, ora cebada, el fruto de la tierra del que mana su bebida favorita: la Fanta naranja. Si la ven en la tarde estival con la sonrisa puesta, ropa de deporte y una mochila, ¡escondan sus macetas! pues les robará alguna flor y también vuestro corazón. </p>
 			  </div>
 			</div>
 		  </div>
@@ -424,15 +442,23 @@ form.addEventListener('change', function(event) {
 
 <section class="seccion">
 	<h1 class="cabecera">Código de vestimenta</h1>
-    <p class="textodecorado" align="justify">Desde esta casa, y tras un largo periodo de introspección, hemos llegado a la conclusión de que no somos nadie para decir a la gente qué ropa debe ponerse, por mucho que el novio sea un cruce entre Palomo Spain y Lorenzo Caprile.</p>
+    <p class="textodecorado" align="justify">Desde esta casa, y tras un largo periodo de introspección, hemos llegado a la conclusión de que no somos nadie para decir a la gente qué ropa debe ponerse, por mucho que la novia sea modista y el novio, un cruce entre Palomo Spain y Lorenzo Caprile.</p>
     <br>
 	<p class="textodecorado" align="justify">Sin entrar en contradicciones, hemos de dar las siguientes pautas de vestuario: si hace frío, recomendamos ponerse ropa de abrigo. Si hace calor, todo es posible, recomendamos ropa más fresquita.</p>
-	<div class="image-section">
-      <img src="vestimenta.jpg" alt="Código de vestimenta">
-      <p class="image-caption">Ejemplos de vestimenta aceptable (usar modelo stable diffusion y poner aquel carrusel de fotos que vi en tik tok</p>
-    </div>
+	<br>
+		<div class="kodfun">
+
+			<div style="background-image: url('lau1.jpg');"></div>
+			<div style="background-image: url('dani1.png');"></div>
+			<div style="background-image: url('lau2.jpg');"></div>
+			<div style="background-image: url('dani2.png');"></div>
+			<div style="background-image: url('lau3.jpg');"></div>
+		</div>
+<br>
+      <center><p class="textodecorado">Ejemplos de vestimenta aceptable</p></center>
+    
     <br>
-	<p class="textodecorado" align="justify">Queda prohibido acudir desnudo al evento, excepto prescripción médica, debiendo llevar informe del mismo para su cotejación.</p>
+	<p class="textodecorado" align="justify">Queda prohibido acudir desnudo al evento, excepto prescripción médica, debiendo llevar informe del mismo para su comprobación.</p>
 
 
 
@@ -455,7 +481,6 @@ form.addEventListener('change', function(event) {
 			<br/>
 			<div class="gallery">
   <a href="seleccion.html"><img src="parentesco.png" class="efectochachi"></a>
-  <a href="enlace-imagen-2"><img src="sitios.png" class="efectochachi"></a>
   <a href="https://youtube.com/playlist?list=PLpvUWK9JpaDeL8-EaDRt7vWBsrfvIvTOT"><img src="playlist.png" class="efectochachi"></a>
   <a href="prosi.html"><img src="prosinecki.png" class="efectochachi"></a>
 </div>
